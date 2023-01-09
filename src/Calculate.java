@@ -1,46 +1,29 @@
 public class Calculate {
-    public int x;
-    public int y;
-
-    public String[] args;
-
-    public Calculate(int x, int y, String[] args) {
-       this.x = x;
-       this.y = y;
-       this.args = args;
-    }
-
-    public void exec() {
-        if(args[0].equals("sum")) {
-            sum(x, y);
-        }
-
-        if(args[0].equals("subtraction")) {
-            subtraction(x, y);
-        }
-
-        if(args[0].equals("division")) {
-            division(x, y);
-        }
-
-        if(args[0].equals("multiplication")) {
-            multiplication(x, y);
+    static Calculator calculator;
+    public static void main(String[] args) {
+        try {
+            if(args[0].equals("help")) {
+                help();
+            } else {
+                int x = Integer.parseInt(args[1]);
+                int y = Integer.parseInt(args[2]);
+                calculator = new Calculator(x, y, args);
+                if(calculator.exec().equals(0)) {
+                    return;
+                } else {
+                    System.out.println(calculator.exec());
+                }
+            }
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: empty required arguments");
         }
     }
 
-    void sum(int x, int y) {
-        System.out.println(x + y);
-    }
-
-    void subtraction(int x, int y) {
-        System.out.println(x - y);
-    }
-
-    void multiplication(int x, int y) {
-        System.out.println(x * y);
-    }
-
-    void division(int x, int y) {
-        System.out.println(x / y);
+    public static void help() {
+        System.out.println("------Possible arguments------");
+        System.out.println("sum      x y");
+        System.out.println("subtract x y");
+        System.out.println("multiply x y");
+        System.out.println("divide   x y");
     }
 }
