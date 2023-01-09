@@ -12,7 +12,3 @@ For help using the command below
  
  - java Calculate help
  
- 
- 
- 
- 
