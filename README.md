@@ -1,6 +1,6 @@
 # Calculator
 
-Requeriments : Java JDK19
+Requirements : Java JDK19
 
 Simple commandline calculator in Java
 
