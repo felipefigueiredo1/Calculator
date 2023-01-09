@@ -1,4 +1,7 @@
 # Calculator
+
+Requeriments : Java JDK19
+
 Simple commandline calculator in Java
 
 Inside src folder , exec with commmands bellow 
